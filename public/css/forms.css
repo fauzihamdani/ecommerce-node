@@ -1,0 +1,29 @@
+.form-control {
+	margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+	/* display: block; */
+	width: 100%;
+	margin-bottom: 0.25rem;
+}
+
+.form-control input,
+.form-control textarea {
+	border: 1px solid tomato;
+	font: inherit;
+	border-radius: 2px;
+	width: 400px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+	outline-color: tomato;
+}
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+	border: solid 5px rgb(211, 22, 186);
+}
