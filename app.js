@@ -11,7 +11,10 @@ const mysql = require('mysql2');
 const csrf = require('csurf');
 const app = express();
 const User = require('./models/user');
-
+const multer = require('multer');
+const Product = require('./models/product');
+const fs = require('fs');
+const { createVerify } = require('crypto');
 // const options = {};
 // var connection = mysql.createConnection(options);
 // var pool = mysql.createPool(options);
@@ -24,11 +27,38 @@ const sessionStore = new mysqlStore({
 });
 const csrfProtection = csrf();
 
+const fileStorage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		fs.mkdir('images', (err) => cb(null, 'images')); //<<null can be error argument, 'images' is the place where save the image data
+	},
+	filename: (req, file, cb) => {
+		cb(null, new Date().toISOString() + '-' + file.originalname);
+	},
+});
+
+const fileFilter = (req, file, cb) => {
+	if (
+		file.mimetype === 'image/png' ||
+		file.mimetype === 'image/jpg' ||
+		file.mimetype === 'image/jpeg'
+	) {
+		cb(null, true);
+	} else {
+		cb(null, false);
+	}
+};
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(
+	multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
+);
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(
 	session({
