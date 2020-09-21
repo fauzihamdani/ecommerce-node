@@ -1,8 +1,11 @@
 <%-include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/comment.css">
+<link rel="stylesheet" href="/css/forms.css">
 </head>
 
 <body>
     <%-include('../includes/navigation.ejs')%>
+    
     <main class="centered">
         <h1><%= product.title%></h1>
         <hr>
@@ -14,5 +17,67 @@
         <% if(isAuthenticated) {%>
         <%- include('../includes/add-to-cart.ejs', {product:product})%>
         <%}%>
+
+        <div class="comment">
+
+            <form class="comment-form" action="/admin/comment" method="POST"
+                enctype="multipart/form-data">
+
+                
+                    <div class="form-control">
+                        <label for="comment">Comment</label>
+                        <textarea 
+                            type="comment"
+                            name="content" rows="5"></textarea>
+                    </div>
+
+                    <input type="hidden" value="<%= product.id %>" name="productId">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <button class="btn" type="submit">Ask About This Product</button>
+            
+            </form>
+        
+
+        <%if (product.comments.length > 0){ %>
+            <%for(let productcomment of product.comments){%>
+                <div class="show-comment">
+                    <input type="text" value="<%= productcomment.user.email %>" disabled name="userId">
+                    <textarea type="comment" name="comment" rows="3" disabled><%= productcomment.content%></textarea>
+                
+                   
+                    <%if (productcomment.feedbacks){ %>
+                        <%for(let feedback of productcomment.feedbacks){%>
+                                <div class="show-comment">
+                                    <input type="text" value="<%= productcomment.user.email %>" disabled name="userId">
+                                    <textarea type="comment" name="comment" rows="3" disabled><%= feedback.content%></textarea>
+                                
+                        <% } %>
+                            
+                            <form class="feedback-form" action="/admin/feedback" method="POST" enctype="multipart/form-data">
+                            
+                            
+                                <div class="show-comment">
+                            
+                                    <textarea type="feedback" name="feedback" rows="3" placeholder="write feedback here"></textarea>
+                                </div>
+                                <input type="hidden" value="<%= productcomment.id %>" name="commentId">
+                                <input type="hidden" value="<%= product.id %>" name="productId">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                                <button class="btn btn-feedback " type="submit">Add Feedback</button>
+                            
+                            </form>
+                        
+                    <% } %>
+                    
+                </div>
+                
+
+
+
+            <% } %>
+        <% }  else {%>
+            <h1>There are No Comments</h1>
+        <%}%>
+        </div>
     </main>
     <%-include('../includes/end.ejs')%>

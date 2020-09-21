@@ -1,0 +1,235 @@
+{
+	"id": 1,
+	"title": "book 3",
+	"price": 50,
+	"imageUrl": "images/2020-08-11T13:06:54.762Z-1buku.jpg",
+	"description": "weqwdsasda",
+	"createdAt": "2020-08-11T13:06:54.000Z",
+	"updatedAt": "2020-08-11T13:06:54.000Z",
+	"comments": [
+		{
+			"id": 1,
+			"content": "ini koment pertama untuk book 3",
+			"createdAt": "2020-06-19T11:24:22.000Z",
+			"updatedAt": "2020-06-19T11:24:22.000Z",
+			"productId": 1,
+			"userId": 1,
+			"user": {
+				"id": 1,
+				"email": "fauzihamdani93@yahoo.co.id",
+				"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+				"resetToken": null,
+				"resetTokenExpiration": null,
+				"createdAt": "2020-08-11T13:05:58.000Z",
+				"updatedAt": "2020-08-11T13:05:58.000Z"
+			},
+			"feedbacks": [
+				{
+					"id": 1,
+					"content": "ini feedback eprtama untuk komen pertama di book 3",
+					"createdAt": "2020-06-19T11:24:22.000Z",
+					"updatedAt": "2020-06-19T11:24:22.000Z",
+					"commentId": 1,
+					"userId": 1,
+					"productId": 1,
+					"user": {
+						"id": 1,
+						"email": "fauzihamdani93@yahoo.co.id",
+						"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+						"resetToken": null,
+						"resetTokenExpiration": null,
+						"createdAt": "2020-08-11T13:05:58.000Z",
+						"updatedAt": "2020-08-11T13:05:58.000Z"
+					}
+				},
+				{
+					"id": 2,
+					"content": "ini feedback kedua untuk komen pertama di book 3",
+					"createdAt": "2020-06-12T20:52:21.000Z",
+					"updatedAt": "2020-06-12T20:52:21.000Z",
+					"commentId": 1,
+					"userId": 2,
+					"productId": 1,
+					"user": {
+						"id": 2,
+						"email": "asdf@yahoo.co.id",
+						"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+						"resetToken": null,
+						"resetTokenExpiration": null,
+						"createdAt": "2020-08-11T13:06:07.000Z",
+						"updatedAt": "2020-08-11T13:06:07.000Z"
+					}
+				}
+			]
+		},
+		{
+			"id": 2,
+			"content": "ini koment kedua untuk book 3",
+			"createdAt": "2020-06-12T20:52:21.000Z",
+			"updatedAt": "2020-06-12T20:52:21.000Z",
+			"productId": 1,
+			"userId": 2,
+			"user": {
+				"id": 2,
+				"email": "asdf@yahoo.co.id",
+				"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+				"resetToken": null,
+				"resetTokenExpiration": null,
+				"createdAt": "2020-08-11T13:06:07.000Z",
+				"updatedAt": "2020-08-11T13:06:07.000Z"
+			},
+			"feedbacks": [
+				{
+					"id": 3,
+					"content": "ini feedback pertama dari komentar kedua di book 3",
+					"createdAt": "2020-06-19T11:24:22.000Z",
+					"updatedAt": "2020-06-19T11:24:22.000Z",
+					"commentId": 2,
+					"userId": 1,
+					"productId": 1,
+					"user": {
+						"id": 1,
+						"email": "fauzihamdani93@yahoo.co.id",
+						"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+						"resetToken": null,
+						"resetTokenExpiration": null,
+						"createdAt": "2020-08-11T13:05:58.000Z",
+						"updatedAt": "2020-08-11T13:05:58.000Z"
+					}
+				},
+				{
+					"id": 4,
+					"content": "ini feedback kedua dari komentar kedua di book 3",
+					"createdAt": "2020-06-12T20:52:21.000Z",
+					"updatedAt": "2020-06-12T20:52:21.000Z",
+					"commentId": 2,
+					"userId": 2,
+					"productId": 1,
+					"user": {
+						"id": 2,
+						"email": "asdf@yahoo.co.id",
+						"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+						"resetToken": null,
+						"resetTokenExpiration": null,
+						"createdAt": "2020-08-11T13:06:07.000Z",
+						"updatedAt": "2020-08-11T13:06:07.000Z"
+					}
+				}
+			]
+		}
+	]
+}[
+	//................
+	//prouct.comments
+
+	({
+		"id": 1,
+		"content": "ini koment pertama untuk book 3",
+		"createdAt": "2020-06-19T11:24:22.000Z",
+		"updatedAt": "2020-06-19T11:24:22.000Z",
+		"productId": 1,
+		"userId": 1,
+		"user": {
+			"id": 1,
+			"email": "fauzihamdani93@yahoo.co.id",
+			"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+			"resetToken": null,
+			"resetTokenExpiration": null,
+			"createdAt": "2020-08-11T13:05:58.000Z",
+			"updatedAt": "2020-08-11T13:05:58.000Z"
+		},
+		"feedbacks": [
+			{
+				"id": 1,
+				"content": "ini feedback eprtama untuk komen pertama di book 3",
+				"createdAt": "2020-06-19T11:24:22.000Z",
+				"updatedAt": "2020-06-19T11:24:22.000Z",
+				"commentId": 1,
+				"userId": 1,
+				"productId": 1,
+				"user": {
+					"id": 1,
+					"email": "fauzihamdani93@yahoo.co.id",
+					"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+					"resetToken": null,
+					"resetTokenExpiration": null,
+					"createdAt": "2020-08-11T13:05:58.000Z",
+					"updatedAt": "2020-08-11T13:05:58.000Z"
+				}
+			},
+			{
+				"id": 2,
+				"content": "ini feedback kedua untuk komen pertama di book 3",
+				"createdAt": "2020-06-12T20:52:21.000Z",
+				"updatedAt": "2020-06-12T20:52:21.000Z",
+				"commentId": 1,
+				"userId": 2,
+				"productId": 1,
+				"user": {
+					"id": 2,
+					"email": "asdf@yahoo.co.id",
+					"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+					"resetToken": null,
+					"resetTokenExpiration": null,
+					"createdAt": "2020-08-11T13:06:07.000Z",
+					"updatedAt": "2020-08-11T13:06:07.000Z"
+				}
+			}
+		]
+	},
+	{
+		"id": 2,
+		"content": "ini koment kedua untuk book 3",
+		"createdAt": "2020-06-12T20:52:21.000Z",
+		"updatedAt": "2020-06-12T20:52:21.000Z",
+		"productId": 1,
+		"userId": 2,
+		"user": {
+			"id": 2,
+			"email": "asdf@yahoo.co.id",
+			"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+			"resetToken": null,
+			"resetTokenExpiration": null,
+			"createdAt": "2020-08-11T13:06:07.000Z",
+			"updatedAt": "2020-08-11T13:06:07.000Z"
+		},
+		"feedbacks": [
+			{
+				"id": 3,
+				"content": "ini feedback pertama dari komentar kedua di book 3",
+				"createdAt": "2020-06-19T11:24:22.000Z",
+				"updatedAt": "2020-06-19T11:24:22.000Z",
+				"commentId": 2,
+				"userId": 1,
+				"productId": 1,
+				"user": {
+					"id": 1,
+					"email": "fauzihamdani93@yahoo.co.id",
+					"password": "$2a$12$YKTgehqoykxtW3p7F1CFxOErWhB/hYAYvX8CNMq11vtxIdGxfxSlS",
+					"resetToken": null,
+					"resetTokenExpiration": null,
+					"createdAt": "2020-08-11T13:05:58.000Z",
+					"updatedAt": "2020-08-11T13:05:58.000Z"
+				}
+			},
+			{
+				"id": 4,
+				"content": "ini feedback kedua dari komentar kedua di book 3",
+				"createdAt": "2020-06-12T20:52:21.000Z",
+				"updatedAt": "2020-06-12T20:52:21.000Z",
+				"commentId": 2,
+				"userId": 2,
+				"productId": 1,
+				"user": {
+					"id": 2,
+					"email": "asdf@yahoo.co.id",
+					"password": "$2a$12$eMUQZ1z.PBL8V6v0159B5OZLbT1d804FjI8REujmmHyiViB/tT9Gy",
+					"resetToken": null,
+					"resetTokenExpiration": null,
+					"createdAt": "2020-08-11T13:06:07.000Z",
+					"updatedAt": "2020-08-11T13:06:07.000Z"
+				}
+			}
+		]
+	})
+]

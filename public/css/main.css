@@ -23,6 +23,11 @@ form {
 	text-align: center;
 }
 
+.centered img {
+	height: 50%;
+	width: 50%;
+}
+
 .image {
 	height: 20rem;
 }
@@ -272,4 +277,9 @@ form {
 	background: rgb(131, 113, 228);
 	padding: 1rem;
 	border-radius: 3px;
+}
+
+.comment {
+	margin: 30px;
+	padding: 30px;
 }

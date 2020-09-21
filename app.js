@@ -11,6 +11,8 @@ const mysql = require('mysql2');
 const csrf = require('csurf');
 const app = express();
 const User = require('./models/user');
+const Comment = require('./models/comment');
+const Feedback = require('./models/feedback');
 const multer = require('multer');
 const Product = require('./models/product');
 const fs = require('fs');
@@ -100,7 +102,51 @@ app.use(shopRoutes);
 app.use('/admin', adminRoutes);
 app.use(authRoutes);
 
-sequelize
+// ---------------- sequelize association beetwen product and comment --------------------------
+Product.hasMany(Comment);
+Comment.belongsTo(Product, {
+	constraints: true,
+	onDelete: 'CASCADE',
+});
+//-----------------------------------********-----------------------------------------------
+
+// ---------------- sequelize association relation comment beetween feedback--------------------------
+Comment.hasMany(Feedback);
+Feedback.belongsTo(Comment, {
+	constraints: true,
+	onDelete: 'CASCADE',
+});
+
+//-----------------------------------********-----------------------------------------------
+
+// ---------------- sequelize association relation beetwen comment and user--------------------------
+User.hasMany(Comment);
+Comment.belongsTo(User, {
+	constraints: true,
+	onDelete: 'CASCADE',
+});
+
+//-----------------------------------********-----------------------------------------------
+
+// ---------------- sequelize association relation beetwen user and feedback--------------------------
+User.hasMany(Feedback);
+Feedback.belongsTo(User, {
+	constraints: true,
+	onDelete: 'CASCADE',
+});
+
+//-----------------------------------********-----------------------------------------------
+
+// ---------------- sequelize association relation product user and feedback--------------------------
+Product.hasMany(Feedback);
+Feedback.belongsTo(Product, {
+	constraints: true,
+	onDelete: 'CASCADE',
+});
+
+//-----------------------------------********-----------------------------------------------
+
+Product.sequelize
 	.sync()
 	// sequelize.sync()
 	.then(() => {
